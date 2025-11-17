@@ -1,0 +1,114 @@
+/* Elegant Dark - custom overrides for welcome_message.php
+   Additions are intentionally minimal and focused on typography, spacing,
+   color palette, hero, cards, buttons, and responsiveness.
+*/
+:root{
+  --bg:#0b0f14; /* deep charcoal */
+  --panel:#0f1720; /* slightly lighter */
+  --muted:#9aa6b2;
+  --accent:#2dd4bf; /* teal/cyan */
+  --accent-2:#60a5fa; /* soft blue */
+  --glass: rgba(255,255,255,0.04);
+  --card-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  --radius:12px;
+  --max-width:1100px;
+}
+
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(45,212,191,0.04), transparent), var(--bg);
+  color: #e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.page-wrapper{max-width:var(--max-width);padding:28px 20px;margin:0 auto;}
+
+/* NAV */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:10px 6px 22px;border-bottom:1px solid rgba(255,255,255,0.03);}
+.nav-left{display:flex;align-items:center;gap:12px}
+.nav-logo{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));font-weight:700;color:#021025}
+.nav-name{font-weight:600;font-size:1.05rem}
+.nav-links a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:500}
+.nav-links a:hover{color:var(--accent)}
+
+/* HERO */
+.hero{display:flex;gap:28px;align-items:center;margin:28px 0 36px}
+.hero-left{flex:1;min-width:0}
+.hero-photo-wrapper{width:220px;display:flex;align-items:center;justify-content:center}
+.neon-card-photo{width:200px;height:200px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));box-shadow:var(--card-shadow);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.neon-card-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+.hero-greeting{color:var(--muted);margin:0 0 6px;font-weight:600}
+.hero-title-main{display:block;font-size:2.28rem;font-weight:700;line-height:1;color:#fff}
+.hero-title-alt{display:block;color:var(--accent);font-weight:600}
+.hero-subtitle-small{color:var(--muted);margin-top:10px}
+.hero-text{margin-top:18px;color:rgba(230,238,246,0.9);max-width:60ch}
+
+.hero-actions{margin-top:20px;display:flex;gap:12px;align-items:center}
+.btn-outline{padding:10px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);color:var(--accent);text-decoration:none;font-weight:600;background:transparent}
+.btn-outline:hover{background:linear-gradient(90deg,rgba(45,212,191,0.06),rgba(96,165,250,0.04));border-color:rgba(45,212,191,0.18)}
+
+.contact-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-size:0.9rem}
+.contact-icon{opacity:0.95}
+
+/* SECTIONS */
+.section{padding:20px 0;border-top:1px solid rgba(255,255,255,0.02)}
+.section-title{font-size:1.2rem;color:#fff;margin:0 0 10px}
+
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.about-stat{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:16px;border-radius:12px;box-shadow:var(--card-shadow)}
+.about-stat-number{font-weight:700;color:var(--accent);font-size:1rem}
+.about-stat-label{color:var(--muted);margin-top:8px;font-size:0.95rem}
+
+/* TIMELINE */
+.timeline{display:block}
+.timeline-item{display:flex;gap:14px;margin-bottom:18px}
+.timeline-dot{width:12px;height:12px;background:var(--accent);border-radius:50%;margin-top:8px}
+.timeline-content{background:var(--panel);padding:14px;border-radius:10px;box-shadow:var(--card-shadow)}
+.timeline-header h3{margin:0;color:#fff}
+.timeline-year{color:var(--muted);font-size:0.9rem}
+.timeline-desc{color:var(--muted);margin-top:8px}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.neon-card{background:var(--panel);border-radius:12px;padding:14px;box-shadow:var(--card-shadow);border:1px solid rgba(255,255,255,0.02)}
+.skill-icon i{color:var(--accent-2);font-size:1.6rem}
+.card-title{color:#fff;margin:6px 0}
+.card-text{color:var(--muted);font-size:0.95rem}
+.skill-level-bar{background:rgba(255,255,255,0.03);height:8px;border-radius:999px;margin-top:8px}
+.skill-level-fill.skill-level-high{width:90%;background:linear-gradient(90deg,var(--accent),var(--accent-2));display:block;height:100%;border-radius:999px}
+.skill-level-fill.skill-level-medium{width:60%;background:linear-gradient(90deg,rgba(255,255,255,0.06),rgba(255,255,255,0.04));height:100%;border-radius:999px}
+.skill-level-fill.skill-level-low{width:30%;background:rgba(255,255,255,0.06);height:100%;border-radius:999px}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.project-thumb img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+.card-link{color:var(--accent);text-decoration:none;font-weight:600}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 380px;gap:18px}
+.contact-info{color:var(--muted)}
+.contact-list{list-style:none;padding:0;margin:0}
+.contact-list li{margin-bottom:8px}
+.contact-form{background:var(--panel);padding:14px;border-radius:10px}
+.contact-form input, .contact-form textarea{width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);color:#e6eef6}
+.btn-full{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#021025;font-weight:700}
+
+/* FOOTER */
+.footer{padding:18px 0;text-align:center;color:var(--muted);font-size:0.95rem;border-top:1px solid rgba(255,255,255,0.02);margin-top:30px}
+
+/* Responsiveness */
+@media (max-width:900px){
+  .hero{flex-direction:column-reverse;align-items:flex-start}
+  .hero-photo-wrapper{width:160px}
+  .contact-grid{grid-template-columns:1fr}
+}
+
+@media (max-width:520px){
+  .nav-links{display:none}
+  .nav-logo{width:44px;height:44px}
+  .hero-title-main{font-size:1.6rem}
+}
